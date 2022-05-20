@@ -11,8 +11,8 @@ const k = kaboom({
   stretch: true,
   background: [255, 255, 128],
 });
-
-const socket = io("http://localhost:7000");
+const debugflag = false;
+const socket = io(`http://${debugflag ? "localhost" : "170.187.201.233" }:7000`);
 socket.on("connect", () => {
   debug.log("Connected to server");
   console.log("[SERVER] connected");
